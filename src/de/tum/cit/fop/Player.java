@@ -11,8 +11,8 @@ public abstract class Player implements Interactions {
     protected int intelligence;
     protected int agility;
     protected int spirit;
-    protected double health;
-    protected int level;
+    protected double health = 200;
+    protected int level = 1;
     protected Armor helmet;
     protected Armor chest;
     protected Armor hands;
