@@ -12,5 +12,14 @@ public class Weapon extends Item {
         this.agility = agility;
         this.spirit = spirit;
     }
-  // TODO: Implement part 2.
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    // TODO: Implement part 2.
 }
