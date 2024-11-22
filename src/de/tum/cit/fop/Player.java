@@ -16,6 +16,7 @@ public abstract class Player {
     protected Armor hands;
     protected Armor legs;
     protected Armor boots;
+
   // TODO: Add missing attributes.
 
   // TODO: Implement part 3.
