@@ -9,14 +9,8 @@ public abstract class Item {
     protected int agility;
     protected int spirit;
 
-    public Item(String specification, String type, boolean equipped, int strength, int intelligence, int agility, int spirit) {
-        this.specification = specification;
+    protected Item (String type) {
         this.type = type;
-        this.equipped = equipped;
-        this.strength = strength;
-        this.intelligence = intelligence;
-        this.agility = agility;
-        this.spirit = spirit;
     }
 
     public String getSpecification() {
