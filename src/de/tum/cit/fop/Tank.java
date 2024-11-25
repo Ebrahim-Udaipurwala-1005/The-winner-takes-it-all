@@ -37,8 +37,27 @@ public class Tank extends Player {
 
     }
 
-    public void attack(Player target) {
+    @Override
+    public void attack(Player target){
+        if (weapon == null){
+            System.out.println("You don't have a weapon to attack!");
+            return;
+        }
 
+        double damage = (strength * 0.7) + weapon.getDamage() + (agility * 0.6) - target.amountOfArmor;
+
+        if (damage <= 0){
+            System.out.println("Target " + target.name + " didn't receive any damage!");
+            return;
+        }
+
+        target.health -= damage;
+
+        if (target.health <= 0){
+            target.health = 0;
+            System.out.println(name + " killed " + target.name);
+            this.level++;
+        }
     }
 
     public void useAbility(Player target) {
