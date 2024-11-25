@@ -14,6 +14,14 @@ public class Healer extends Player {
         equipItems();
     }
 
+    public List<Ability> getAbilities() {
+        return abilities;
+    }
+
+    public void setAbilities(List<Ability> abilities) {
+        this.abilities = abilities;
+    }
+
     public void attack(Player target) {
 
     }

@@ -17,6 +17,22 @@ public class Tank extends Player {
         equipItems();
     }
 
+    public List<Ability> getAbilities() {
+        return abilities;
+    }
+
+    public void setAbilities(List<Ability> abilities) {
+        this.abilities = abilities;
+    }
+
+    public Armor getShield() {
+        return shield;
+    }
+
+    public void setShield(Armor shield) {
+        this.shield = shield;
+    }
+
     public void attack(Player target) {
 
     }
