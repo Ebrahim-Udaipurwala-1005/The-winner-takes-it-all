@@ -31,7 +31,7 @@ public abstract class Player implements Interactions {
         equipItems();
     }
 
-    public void equipItems(){
+    protected void equipItems(){
         for (Armor armor : armor) {
             if(armor.getType().equalsIgnoreCase("Helmet") && helmet == null){
                 helmet = armor;
