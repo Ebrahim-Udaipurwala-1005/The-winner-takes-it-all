@@ -73,27 +73,7 @@ public abstract class Player implements Interactions {
         return health <= 0;
     }
 
-    public void attack(Player target){
-        if (weapon == null){
-            System.out.println("You don't have a weapon to attack!");
-            return;
-        }
-
-        double damage = (strength * 0.4) + weapon.getDamage() + (agility * 0.4) - target.amountOfArmor;
-
-        if (damage <= 0){
-            System.out.println("Target " + target.name + " didn't receive any damage!");
-            return;
-        }
-
-        target.health -= damage;
-
-        if (target.health <= 0){
-            target.health = 0;
-            System.out.println(name + " killed " + target.name);
-            this.level++;
-        }
-    }
+    public abstract void attack(Player target);
 
     public abstract void useAbility(Player target);
 
