@@ -1,25 +1,45 @@
 package de.tum.cit.fop;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Healer extends Player {
+    // TODO: Implement part 4.
     private List<Ability> abilities;
-    public Healer(String name, List<Ability> abilities, List<Armor> armor, Weapon weapon, String weaponType) {
+    public Healer (String name, List<Ability> abilities, List<Armor> armor, Weapon weapon, String weaponType){
         super(name, "Healer", 9, armor, weapon, weaponType);
         super.strength = 3;
-        super.intelligence = 5;
         super.agility = 3;
+        super.intelligence = 5;
         super.spirit = 10;
         this.abilities = abilities;
         equipItems();
     }
-
     public List<Ability> getAbilities() {
         return abilities;
     }
 
-    public void setAbilities(List<Ability> abilities) {
-        this.abilities = abilities;
+    public void useAbility(Player target) {
+        Random rand = new Random();
+        List<Ability> healerAbilities = new ArrayList<Ability>();
+        for (Ability ability : abilities) {
+            if (ability.getSpecification().equals("Healer"))
+                healerAbilities.add(ability);
+        }
+        if (healerAbilities.isEmpty()) {
+            System.out.println(super.name + " has no spells to cast!");
+            return;
+        }
+        if (target.isDead()) {
+            System.out.println("Can not heal " + target.name + ", " + target.name + " is dead!");
+            return;
+        }
+        Ability ability = healerAbilities.get(rand.nextInt(healerAbilities.size()));
+        target.health += spirit + ability.getHeal() + intelligence * 0.5;
+        if (target.isDead()) {
+            System.out.println("Can not heal " + target.name + ", " + target.name + " is dead!");
+        }
     }
 
     @Override
@@ -40,12 +60,7 @@ public class Healer extends Player {
         }
     }
 
-    public void useAbility(Player target) {
+    // TODO: Implement part 5.
 
-    }
-  // TODO: Implement part 4.
-
-  // TODO: Implement part 5.
-
-  // TODO: Implement part 6.
+    // TODO: Implement part 6.
 }
