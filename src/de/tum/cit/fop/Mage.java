@@ -6,10 +6,10 @@ public class Mage extends Player {
     private List<Ability> abilities;
     public Mage(String name, List<Ability> abilities, List<Armor> armor, Weapon weapon, String weaponType) {
         super(name, "Mage", 5, armor, weapon, weaponType);
-        this.strength = 2;
-        this.intelligence = 10;
-        this.agility = 4;
-        this.spirit = 6;
+        super.strength = 2;
+        super.intelligence = 10;
+        super.agility = 4;
+        super.spirit = 6;
         this.abilities = abilities;
         equipItems();
     }
