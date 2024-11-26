@@ -16,8 +16,4 @@ public class Armor extends Item {
     public int getAmountOfArmor() {
         return amountOfArmor;
     }
-
-    public void setAmountOfArmor(int amountOfArmor) {
-        this.amountOfArmor = amountOfArmor;
-    }
 }
